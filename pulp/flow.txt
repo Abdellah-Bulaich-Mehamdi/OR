@@ -1,0 +1,21 @@
+\* Max-Flow *\
+Maximize
+OBJ: u_(0,_1) + u_(0,_2)
+Subject To
+Flow_Conservation_in_Node_1: - u_(0,_1) + u_(1,_3) = 0
+Flow_Conservation_in_Node_2: - u_(0,_2) + u_(2,_3) + u_(2,_4) = 0
+Flow_Conservation_in_Node_3: - u_(1,_3) - u_(2,_3) + u_(3,_4) = 0
+Flow_Conservation_in_Node_puit_source: u_(0,_1) + u_(0,_2) - u_(2,_4)
+ - u_(3,_4) = 0
+Bounds
+ 0 <= u_(1,_3) <= 0.5
+ 0 <= u_(2,_4) <= 0.5
+Generals
+u_(1,_3)
+u_(2,_4)
+Binaries
+u_(0,_1)
+u_(0,_2)
+u_(2,_3)
+u_(3,_4)
+End
